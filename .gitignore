@@ -1,0 +1,31 @@
+# Compiled object files
+*.o
+
+# Executables
+stackADT_linked
+*.exe
+*.out
+
+# Core dumps
+core
+
+# Editor swap/temp files
+*~
+*.swp
+
+# Logs
+*.log
+
+# CTags/TAGS
+tags
+TAGS
+
+# Makefile binaries
+build/
+
+# VS Code config (optional)
+.vscode/
+
+# GDB debug files (optional)
+.gdb_history
+
