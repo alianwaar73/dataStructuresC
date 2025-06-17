@@ -29,3 +29,5 @@ build/
 # GDB debug files (optional)
 .gdb_history
 
+# Other direcotories
+videoLectures_Urdu/
