@@ -3,6 +3,7 @@
 
 # Executables
 stackADT_linked
+stackADT_implementation_array
 *.exe
 *.out
 
@@ -30,4 +31,4 @@ build/
 .gdb_history
 
 # Other direcotories
-videoLectures_Urdu/
+videoLectures-Urdu/
