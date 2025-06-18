@@ -1,6 +1,10 @@
-# Data Structures in C: Stack Abstract Data Type (ADT) — Linked List Implementation
+# Data Structures in C: Stack Abstract Data Type (ADT) — Linked List and Array Implementations
 
-Welcome to the companion code repository for an undergraduate course on Data Structures. This repository focuses on the implementation and understanding of the **Stack Abstract Data Type (ADT)** using the C programming language. The code in this repository, specifically in the file `stackADT_linked.c`, demonstrates a classic **linked list implementation of a stack**. This repository is designed for students new to both GitHub and programming in C, with an emphasis on hands-on learning and conceptual clarity.
+Welcome to the companion code repository for an undergraduate course on Data Structures. This repository contains educational code for the **Stack Abstract Data Type (ADT)** in C, with two separate modules:  
+- A **linked list implementation** (`stackLinkedList/stackADT_linked.c`)  
+- An **array implementation** (`stackArray/stackADT_array.c`)  
+
+Both are organized in separate directories for clarity. This repository is designed for students new to GitHub, C programming, and command-line tools, with a strong focus on hands-on learning and conceptual understanding.
 
 ---
 
@@ -31,79 +35,125 @@ Welcome to the companion code repository for an undergraduate course on Data Str
 
 ---
 
-### 2. Compiling and Running the Code
+### 2. Building and Running the Modules
 
-#### **Linux Instructions**
-1. Open Terminal and navigate to the directory containing `stackADT_linked.c`.
-2. Compile the code with:
-   ```
-   gcc -o stackADT_linked stackADT_linked.c
-   ```
-   - If you don't have GCC installed, run:  
-     `sudo apt install build-essential`
-3. Run the compiled program:
-   ```
-   ./stackADT_linked
-   ```
+Both modules use **Makefiles** for easy building and cleaning.
 
-#### **Windows Instructions**
-1. Open **Command Prompt** and navigate to the directory with `stackADT_linked.c`.
-2. Install [MinGW](https://sourceforge.net/projects/mingw/) if you don't have a C compiler.
-3. Add `gcc` to your system PATH during installation.
-4. Compile the code:
-   ```
-   gcc -o stackADT_linked.exe stackADT_linked.c
-   ```
-5. Run the program:
-   ```
-   stackADT_linked.exe
-   ```
+#### **A. Linked List Stack (`stackLinkedList`)**
+
+**Navigate to the directory:**
+```
+cd stackLinkedList
+```
+
+**To build the program:**
+```
+make
+```
+
+**To run the program:**
+```
+./stackADT_linked
+```
+- On Windows (with MinGW or similar), run:
+  ```
+  stackADT_linked.exe
+  ```
+
+**To clean build files:**
+```
+make clean
+```
+
+#### **B. Array Stack (`stackArray`)**
+
+**Navigate to the directory:**
+```
+cd stackArray
+```
+
+**To build the program:**
+```
+make
+```
+
+**To run the program:**
+```
+./stack_implementation_array
+```
+- On Windows:
+  ```
+  stack_implementation_array.exe
+  ```
+
+**To clean build files:**
+```
+make clean
+```
 
 ---
 
 ## 📖 Repository Contents
 
-- **stackADT_linked.c**:  
-  This is the main file of the repository. It contains a simple, clear implementation of a stack using the C language, following the principles of the Stack ADT. The stack is implemented using a linked list structure for maximum flexibility and educational clarity.
+### **stackLinkedList/**
 
-### **Functions included:**
-- **initialiseStack(Stack* s)**: Initializes a new stack.
-- **isEmpty(Stack* s)**: Checks whether the stack is empty.
-- **Push(Stack* s, int element)**: Adds an element to the top of the stack.
-- **Pop(Stack* s)**: Removes and returns the top element from the stack.
-- **Top(Stack* s)**: Returns (without removing) the top element of the stack.
-- **makeEmpty(Stack* s)**: Empties the entire stack.
-- **printStack(Stack* s)**: Prints the contents of the stack.
+- **stackADT_linked.c**  
+  Implements a stack using a singly linked list.  
+  **Key Functions:**
+  - `initializeStack(Stack* s)`: Initializes a new stack.
+  - `isEmpty(Stack* s)`: Checks if the stack is empty.
+  - `Push(int element, Stack* s)`: Pushes an element onto the stack.
+  - `Pop(Stack* s)`: Pops the top element from the stack.
+  - `Top(Stack* s)`: Returns (without popping) the top element.
+  - `makeEmpty(Stack* s)`: Empties the entire stack.
+  - `printStack(Stack* s)`: Prints the stack contents from top to bottom.
 
-The program provides a menu-driven interface for users to interact with the stack, including options to push, pop, check the top element, check if the stack is empty, empty the stack, and print the stack.
+### **stackArray/**
 
-Each operation is implemented as a separate function, with clear comments for educational purposes.
+- **stackADT_array.c**  
+  Implements a stack using a fixed-size array.  
+  **Key Functions:**
+  - `Initialise(Stack* s)`: Initializes the array-based stack.
+  - `isEmpty(Stack* s)`: Checks if the stack is empty.
+  - `isFull(Stack* s)`: Checks if the stack is full.
+  - `Push(int element, Stack* s)`: Pushes an element onto the stack.
+  - `Pop(Stack* s)`: Pops the top element from the stack.
+  - `Top(Stack* s)`: Returns the top element.
+  - `makeEmpty(Stack* s)`: Empties the stack.
+  - `printStack(Stack* s)`: Prints the stack contents from top to bottom.
+
+Each module is self-contained and includes its own Makefile and header files for modular use and learning.
 
 ---
 
 ## 🚀 Learning Objectives
 
-- Understand the concept and use-cases of the Stack ADT.
-- Learn how to implement stacks using linked lists in C.
-- Practice fundamental C programming skills (pointers, dynamic memory, functions).
-- Prepare for more advanced data structures by mastering stack operations.
+- Understand the Stack ADT and its applications.
+- Learn the difference between linked list and array implementations of stacks.
+- Practice C programming skills: pointers, dynamic memory, arrays, functions, and modular code.
+- Experience real-world project organization and compilation tools (Makefiles).
 
 ---
 
-## 🔮 Planned Updates & Repository Organization
+## 🔮 Repository Organization & Future Updates
 
-- **Upcoming Features**:  
-  Future updates will include an **array-based implementation** of the stack in a separate file (e.g., `stackADT_array.c`) to complement the linked-list version. This will help students compare and contrast different approaches to implementing the same ADT.
-- **Repository Structure** (planned):
-  ```
-  dataStructuresC/
-    ├── stackADT_linked.c      # Current implementation (linked list)
-    ├── stackADT_array.c       # (Coming soon: array-based version)
-    ├── README.md
-    └── (other data structures and documentation)
-  ```
+```
+dataStructuresC/
+  ├── stackLinkedList/
+  │     ├── stackADT_linked.c
+  │     ├── stackADT_linked.h
+  │     ├── main.c
+  │     └── Makefile
+  ├── stackArray/
+  │     ├── stackADT_array.c
+  │     ├── stackADT_array.h
+  │     ├── main.c
+  │     └── Makefile
+  └── README.md
+```
+
 - **Regular Updates**:  
-  The repository will be expanded regularly with new code examples, exercises, and additional data structures relevant to the course.
+  The repository will be expanded with new data structures, more examples, and exercises relevant to the undergraduate curriculum.
 
 ---
 
